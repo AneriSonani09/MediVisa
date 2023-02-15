@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link, /*useNavigate */} from "react-router-dom";
+import { Link} from "react-router-dom";
 import styles from "./styles.module.css";
+import med from "./medicine.png";
+import { ReactSVG } from "react-svg";
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
-	// const navigate = useNavigate();
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
@@ -15,8 +16,8 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const url = "http://localhost:8000/api/auth";
-			const { data: res } = await axios.post(url, data)
-			// navigate("/Signup");
+			const { data: res } = await axios.post(url, data);
+			console.log(data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
 		} catch (error) {
@@ -61,6 +62,7 @@ const Login = () => {
 					</form>
 				</div>
 				<div className={styles.right}>
+				{/* <img src={med} alt="load"></img> */}
 					<h1>New Here ?</h1>
 					<Link to="/signup">
 						<button type="button" className={styles.white_btn}>
