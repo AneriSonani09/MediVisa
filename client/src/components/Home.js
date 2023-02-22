@@ -9,6 +9,7 @@ import Search from './Search';
 import Footer from './Footer';
 import Info from './Info';
 import Region from './Region';
+import Rules from './Rules';
 
 function Home() {
   return (
@@ -16,13 +17,14 @@ function Home() {
       <NavBar />
       <Hero />
       <About />
+      <Rules />
       <Services />
       <Appointment />
       {/* <Keyur/> */}
       <Search />
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Home
