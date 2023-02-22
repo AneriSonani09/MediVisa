@@ -19,5 +19,6 @@
     "mongoose": "^6.6.1",
     "routes": "^2.1.0"
   },
+  "devDependencies": {},
   "description": ""
 }

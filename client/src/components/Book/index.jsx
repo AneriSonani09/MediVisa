@@ -1,9 +1,30 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import styles from './styles.module.css';
 
 const Book = () => {
+    const [regionName,setregionName]=useState();
+    const [newperson,setaddPerson]=useState({person:"",dob:""});
+    const style1 = {"height":"55px"};
+    const getGeoInfo = () => {
+        axios.get('https://ipapi.co/json/').then((response) => {
+            let data = response.data;
+            setregionName(data.region);
+            this.setState({
+                regionName: data.region,
+            });
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+    const addperson=()=>{
+        
+    }
+    useEffect(()=>{
+        getGeoInfo();
+    },[])
+
     const [data, setData] = useState({
         name: "",
         email: "",

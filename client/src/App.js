@@ -3,12 +3,14 @@ import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Book from "./components/Book"
+import Home from "./components/Home";
+
 function App() {
 	const user = localStorage.getItem("token");
 
 	return (
 		<Routes>
-			{user && <Route path="/" exact element={<Main />} />}
+			{user && <Route path="/" exact element={<Home />} />}
 			<Route path="/signup" exact element={<Signup />} />
 			<Route path="/login" exact element={<Login />} />
 			<Route path="/book" exact element={<Book />} />

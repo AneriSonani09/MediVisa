@@ -1,0 +1,68 @@
+// Utility generator
+// Used to generate utilities & print utilities
+@mixin generate-utility($utility, $infix, $is-rfs-media-query: false) {
+  $values: map-get($utility, values);
+
+  // If the values are a list or string, convert it into a map
+  @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
+    $values: zip($values, $values);
+  }
+
+  @each $key, $value in $values {
+    $properties: map-get($utility, property);
+
+    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($properties) == "string" {
+      $properties: append((), $properties);
+    }
+
+    // Use custom classNameName if present
+    $property-classNameName: if(map-has-key($utility, classNameName), map-get($utility, classNameName), nth($properties, 1));
+    $property-classNameName: if($property-classNameName == null, "", $property-classNameName);
+
+    // State params to generate pseudo-classNameNamees
+    $state: if(map-has-key($utility, state), map-get($utility, state), ());
+
+    $infix: if($property-classNameName == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
+
+    // Don't prefix if value key is null (eg. with shadow classNameName)
+    $property-classNameName-modifier: if($key, if($property-classNameName == "" and $infix == "", "", "-") + $key, "");
+
+    @if map-get($utility, rfs) {
+      // Inside the media query
+      @if $is-rfs-media-query {
+        $val: rfs-value($value);
+
+        // Do not render anything if fluid and non fluid values are the same
+        $value: if($val == rfs-fluid-value($value), null, $val);
+      }
+      @else {
+        $value: rfs-fluid-value($value);
+      }
+    }
+
+    $is-rtl: map-get($utility, rtl);
+
+    @if $value != null {
+      @if $is-rtl == false {
+        /* rtl:begin:remove */
+      }
+      .#{$property-classNameName + $infix + $property-classNameName-modifier} {
+        @each $property in $properties {
+          #{$property}: $value if($enable-important-utilities, !important, null);
+        }
+      }
+
+      @each $pseudo in $state {
+        .#{$property-classNameName + $infix + $property-classNameName-modifier}-#{$pseudo}:#{$pseudo} {
+          @each $property in $properties {
+            #{$property}: $value if($enable-important-utilities, !important, null);
+          }
+        }
+      }
+      @if $is-rtl == false {
+        /* rtl:end:remove */
+      }
+    }
+  }
+}
