@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Joi = require('joi'); 
 
-
 const bookingSchema = new mongoose.Schema({
     name: {type: String, required: true},
     dateOfBirth: {type: Date, required: true},
     email: {type: String, required: true},
     city: {type: String, required: true},
     mobile: {type: Number, required: true},
+    isConfirm: {type:String, default:"Pending"}
 });
 
 const bookings = mongoose.model("bookings", bookingSchema);

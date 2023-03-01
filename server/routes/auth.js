@@ -22,7 +22,6 @@ router.post("/", async (req, res) => {
 		);
 		if (!validPassword){
 			return res.status(401).send({ message: "Invalid Password" });
-
 		}
 		console.log("password validate");
 		// const token = user.generateAuthToken();
