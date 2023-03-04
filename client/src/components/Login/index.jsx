@@ -24,6 +24,9 @@ const Login = () => {
 			// console.log(y);
 			localStorage.setItem("token", res.data);
 			localStorage.setItem("loggedUser", JSON.stringify(res.loggedUser));
+			if(loggedUser.email==="admin@gmail.com" && loggedUser.password==="Admin@123")
+				window.location="/admin"
+			else
 			window.location = "/";
 		} catch (error) {
 			if (
