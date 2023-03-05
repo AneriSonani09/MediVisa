@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
         })
         .catch((error) => {
             console.log('error: ', error);
-			
         });
 		console.log("Dhruvi");
 	} catch (error) {

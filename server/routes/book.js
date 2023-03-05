@@ -3,10 +3,15 @@ const { User, validate, bookings } = require("../models/bookings");
 
 router.post("/", async (req, res) => {
 	try {
-		console.log(req.body);
 		const book=new bookings(req.body);
 		await book.save();
-		return res.status(200).json("done");
+		const bookedData = req.body;
+		console.log(bookedData);
+
+		const obj = {
+			bookedData:book,
+		};
+		return res.status(201).json(obj);
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}

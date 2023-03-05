@@ -5,8 +5,7 @@ import styles from './styles.module.css';
 
 const Signup = () => {
     const [data, setData] = useState({
-        firstName: "",
-        lastName: "",
+        userName: "",
         email: "",
         password: ""
     });
@@ -45,18 +44,10 @@ const Signup = () => {
                     <form className={styles.form_container} onSubmit = {handleSubmit}>
                         <h1>Create Account</h1>
                         <input type="text"
-                            placeholder='First Name'
-                            name='firstName'
+                            placeholder='Username'
+                            name='userName'
                             onChange={handleChange}
-                            value={data.firstName}
-                            required
-                            className={styles.input}
-                        />
-                        <input type="text"
-                            placeholder='Last Name'
-                            name='lastName'
-                            onChange={handleChange}
-                            value={data.lastName}
+                            value={data.userName}
                             required
                             className={styles.input}
                         />

@@ -2,11 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { Link} from "react-router-dom";
 import styles from "./styles.module.css";
-import med from "./medicine.png";
-import { ReactSVG } from "react-svg";
 
 const Login = () => {
-	const [data, setData] = useState({ email: "", password: "" });
+	const [data, setData] = useState({ userName: "", password: "" });
 	const [error, setError] = useState("");
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -20,14 +18,13 @@ const Login = () => {
 			console.log(data);
 			const loggedUser = data;
 			console.log(loggedUser)		
-			// const y = await res.json();
-			// console.log(y);
 			localStorage.setItem("token", res.data);
 			localStorage.setItem("loggedUser", JSON.stringify(res.loggedUser));
-			if(loggedUser.email==="admin@gmail.com" && loggedUser.password==="Admin@123")
+			if(loggedUser.userName==="adminHere" && loggedUser.password==="Admin@123"){
 				window.location="/admin"
+			}
 			else
-			window.location = "/";
+				window.location = "/";
 		} catch (error) {
 			if (
 				error.response &&
@@ -46,11 +43,11 @@ const Login = () => {
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>
 						<input
-							type="email"
-							placeholder="Email"
-							name="email"
+							type="text"
+							placeholder="Username"
+							name="userName"
 							onChange={handleChange}
-							value={data.email}
+							value={data.userName}
 							required
 							className={styles.input}
 						/>

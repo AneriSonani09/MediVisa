@@ -25,7 +25,13 @@ const Book = () => {
         getGeoInfo();
     },[])
 
+    var y = localStorage.getItem("loggedUser");
+    console.log(y);
+    y = JSON.parse(y);
+    y = y.userName;    
+
     const [data, setData] = useState({
+        userName: y,
         name: "",
         email: "",
         dateOfBirth: "",
@@ -33,7 +39,6 @@ const Book = () => {
         mobile: ""
     });
     const [error, setError] = useState("");
-    //const navigate = useNavigate();
     const handleChange = ({currentTarget: input})=>{
         setData({...data, [input.name]: input.value});
     };
@@ -44,7 +49,10 @@ const Book = () => {
             const url="http://localhost:8000/api/book";
             const {data: res} = await axios.post(url, data);
             console.log(data);
+            const bookedData = data;
+            console.log(bookedData);
             localStorage.setItem("token", res.data);
+            localStorage.setItem("bookedData", JSON.stringify(res.bookedData));
             window.location = "/";
         }
         catch(error){
@@ -60,14 +68,6 @@ const Book = () => {
     return (
         <div className = {styles.signup_container}>
             <div className= {styles.signup_form_container}>
-                {/* <div className = {styles.left}>
-                    <h1>Welcome Back!</h1>
-                    <Link to="/login">
-                        <button type='button' className={styles.white_btn}>
-                            Sign in
-                        </button>
-                    </Link>
-                </div> */}
                 <div className = {styles.right}>
                     <form className={styles.form_container} onSubmit = {handleSubmit}>
                         <h1>Book an appointment</h1>

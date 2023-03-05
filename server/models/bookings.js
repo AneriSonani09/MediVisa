@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Joi = require('joi'); 
 
 const bookingSchema = new mongoose.Schema({
+    userName: {type: String, default:null},
     name: {type: String, required: true},
     dateOfBirth: {type: Date, required: true},
     email: {type: String, required: true},
