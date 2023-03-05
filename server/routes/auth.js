@@ -30,8 +30,8 @@ router.post("/", async (req, res) => {
 			loggedUser: user,
 		};
 		console.log(loggedUser);
-		console.log(loggedUser.firstName);
-		console.log(loggedUser.lastName);
+		console.log(loggedUser.userName);
+		// console.log(loggedUser.lastName/);
     return res.status(201).json(obj);
   } catch (error) {
     res.status(500).send({ message: "Internal Server Error" });

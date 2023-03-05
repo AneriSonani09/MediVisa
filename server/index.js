@@ -10,7 +10,7 @@ const bookRoutes = require("./routes/book");
 const hospitalRoutes = require("./routes/hospital");
 const allHospitals = require("./routes/hos");
 const bookingsRoutes = require("./routes/confirmbook");
-const appHistoryRoutes = require("./routes/appointmentHis");
+const bookHisRoutes = require("./routes/bookHistory");
 
 // database connection
 connection();
@@ -26,7 +26,7 @@ app.use("/api/book", bookRoutes);
 app.use("/api/hospital",hospitalRoutes);
 app.use("/api/hos",allHospitals);
 app.use("/api/confirmbook",bookingsRoutes);
-app.use("/api/appointmentHis",appHistoryRoutes);
+app.use("/api/bookHistory",bookHisRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, console.log(`Listening on port ${port}...`));
