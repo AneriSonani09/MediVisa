@@ -6,8 +6,10 @@ const connection = require("./db");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const bookRoutes = require("./routes/book");
+const bookingsRoutes = require("./routes/confirmbook");
 const hospitalRoutes = require("./routes/hospital");
 const allHospitals = require("./routes/hos");
+const bookHisRoutes = require("./routes/bookHistory");
 // database connection
 connection();
 
@@ -19,8 +21,11 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/book", bookRoutes);
-app.use("/api/hospital",hospitalRoutes);
-app.use("/api/hos",allHospitals);
+app.use("/api/confirmbook", bookingsRoutes);
+app.use("/api/hospital", hospitalRoutes);
+app.use("/api/hos", allHospitals);
+app.use("/api/bookHistory", bookHisRoutes);
+
 // app.use(require('./api/auth'));
 // app.use(require('./api/users'));
 
