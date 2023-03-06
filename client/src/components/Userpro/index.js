@@ -10,12 +10,7 @@ function Userpro() {
 
   let uName = x.userName;
 
-  var y = localStorage.getItem("bookedData");
-  console.log(y);
-  y = JSON.parse(y);
-
   const [bookHistory, setbookHistory] = useState();
-  // const [userName, setuserName] = useState()
   const getHistory = () => {
     axios.post("http://localhost:8000/api/bookHistory/", {uName})
     .then((res) => {
@@ -65,8 +60,6 @@ function Userpro() {
           <h1>User Profile</h1>
           <h2>{x.email}</h2>
           <h2>{x.userName}</h2>
-          <h2>{y.name}</h2>
-          <h1>Admin</h1>
       <table class="rwd-table">
       <tbody>
       <tr>

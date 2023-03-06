@@ -7,6 +7,7 @@ router.post("/", async(req, res) => {
         const userBooked = await bookings.find({userName: req.body.uName});
         console.log("/////");
         console.log(userBooked);
+        console.log("/////");
         return res.status(201).json({userBooked});
     }catch(eroor){
         console.log(error);
