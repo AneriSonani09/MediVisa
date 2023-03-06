@@ -27,7 +27,7 @@ function Hero() {
                 Find Doctor
               </a>
               <a
-                href="http://localhost:3000/book"
+                href="http://localhost:3000/hospitals"
                 className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2"
               >
                 Appointment
