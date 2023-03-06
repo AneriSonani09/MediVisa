@@ -1,0 +1,51 @@
+#about-section {
+    background: rgba(32, 33, 36, 0.1);
+    position: relative;
+}
+
+.blockabout {
+    padding: 20px;
+    background: white;
+}
+
+.blockabout-inner {
+    padding: 30px;
+    border: 1px solid rgba(32, 33, 36, 0.1);
+}
+
+.sosmed-horizontal a i {
+    border: 1px solid #070707;
+    border-radius: 50%;
+    color: #070707;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    margin: auto 3px;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.rey-btn {
+    border: 2px solid #070707;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+/* .col-lg-3 .mt-5 .mt-lg-0 .potoaboutwrap{
+    height: 5%;
+    width: 5%;
+} */
+th{
+    background-color: #13C5DD;
+}
+.potoaboutwrap{
+    color: black;
+}
+
+

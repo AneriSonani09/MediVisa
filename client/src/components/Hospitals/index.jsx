@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import NavBar from "../NavBar";
 
 // function Hospitals() {
 //     const [regionName, setregionName]=useState();
@@ -125,6 +126,7 @@ function Hospitals() {
   return (
     <div>
       <div>
+        <NavBar/>
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row g-5">
