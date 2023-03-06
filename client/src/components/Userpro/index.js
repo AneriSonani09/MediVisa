@@ -16,65 +16,48 @@ function Userpro() {
 
   const [bookHistory, setbookHistory] = useState();
   // const [userName, setuserName] = useState()
-  const getHistory =  async(e) => {
-    try {
-      var resi = await fetch("http://localhost:8000/api/bookHistory/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          uName,
-        }),
-
-      });
-      console.log("////");
-      resi=resi.json(); 
-      console.log(resi);
-      console.log("////");
-      // let data = res.data;
-      // console.log(data);
-      console.log("Hurrahhhh");
-      console.log(resi.userBooked);
-      setbookHistory(resi.userBooked);
-    }catch(error){
+  const getHistory = () => {
+    axios.post("http://localhost:8000/api/bookHistory/", {uName})
+    .then((res) => {
+      let data = res.data;
+      console.log(data);
+      console.log("Dhruvi");
+      console.log("/////////");
+      console.log(data.userBooked);
+      console.log("/////////");
+      setbookHistory(data.userBooked);
+    })
+    .catch((error) => {
       console.log(error);
-    }
-    // axios.post("http://localhost:8000/api/bookHistory/", {
-    //   userName: x.userName,
-    // })
-    // .then((res) => {
-    //   console.log("////");
-    //   console.log(res);
-    //   console.log("////");
-    //   let data = res.data;
-    //   console.log(data);
-    //   console.log("Hurrahhhh");
-    //   console.log(data.userBooked);
-    //   setbookHistory(data.userBooked);
-    // }).catch((err)=>{
-    //   console.log(err);
-    // });
-  }
-    // axios.get("http://localhost:8000/api/bookHistory/")
-    // .then((res) => {
-    //   console.log("////");
-    //   console.log(res);
-    //   console.log("////");
-    //   let data = res.data;
-    //   console.log(data);
-    //   console.log("Hurrahhhh");
-    //   console.log(data.userBooked);
-    //   setbookHistory(data.userBooked);
-    // })
-    // .catch((err)=>{
-    //   console.log(err);
-    // });
-  // };
-
+    });
+  };
+  // const getHistory =  async(e) => {
+  //   try {
+  //     var resi = await fetch("http://localhost:8000/api/bookHistory/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         uName,
+  //       }),
+  //     });
+  //     console.log("////");
+  //     resi=resi.json(); 
+  //     console.log(resi);
+  //     console.log("////");
+  //     // let data = res.data;
+  //     // console.log(data);
+  //     console.log("Hurrahhhh");
+  //     console.log(resi.userBooked);
+  //     setbookHistory(resi.userBooked);
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
   useEffect(()=>{
     getHistory();
-  }, );
+  }, []);
 
 
   return (
@@ -82,7 +65,7 @@ function Userpro() {
           <h1>User Profile</h1>
           <h2>{x.email}</h2>
           <h2>{x.userName}</h2>
-          <h2>{y.city}</h2>
+          <h2>{y.name}</h2>
           <h1>Admin</h1>
       <table class="rwd-table">
       <tbody>
