@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import NavBar from "../NavBar";
 
@@ -83,9 +84,9 @@ import NavBar from "../NavBar";
 
 // export default Hospitals
 
-function Hospitals() {
+function Hospitals(props) {
   const [regionName, setregionName] = useState();
-
+  const navigate = useNavigate();
   var obj;
 
   fetch("https://ipapi.co/json/")
@@ -102,7 +103,7 @@ function Hospitals() {
 
   const getAllHospitals = () => {
     axios
-      .get("http://localhost:8000/api/hos")
+      .post("http://localhost:8000/api/hos",{ regionName })
       .then((response) => {
         let data = response.data;
         console.log(data);
@@ -117,49 +118,57 @@ function Hospitals() {
   useEffect(() => {
     //  handleSubmit();
     getAllHospitals();
-  }, []);
+  }, [regionName]);
 
-  const [data, setData] = useState({
-    state: regionName,
-  });
+  function bookedhospital(hos){
+    console.log(`Button clicked with ${hos}`);
+    localStorage.setItem("hospital", JSON.stringify(hos));
+    var bookedHos = localStorage.getItem("hospital");
+    console.log(bookedHos);
+    bookedHos = JSON.parse(bookedHos);
+    console.log(bookedHos);
+
+    navigate('/book');
+
+  }
+  // const [data, setData] = useState({
+  //   state: regionName,
+  // });
 
   return (
     <div>
       <div>
         <NavBar/>
+
+        {(hospitals || []).map((i) => {
+              return (
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row g-5">
               <div className="col-lg-4 col-md-6">
-                <div className="pt-2">
-                  <button
-                    href=""
-                    className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"
-                  >
-                    Confirm
-                  </button>
-                </div>
                 <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <h4 className="mb-3">{regionName}</h4>
+                  <h4 className="mb-3">{i.hospitalName}</h4>
+                  <h5>{i.city} | {i.state}</h5>
                   <p className="m-0">
                     The test contents in the medical examination packages of CIC
                     are only as per the advice of the Canadian consulate. If
                     required additional tests have to be done as per their
                     protocol.
                   </p>
-                  <a className="btn btn-lg btn-primary rounded-pill" href="">
-                    <i className="bi bi-arrow-right"></i>
-                  </a>
+                  <button onClick={() => bookedhospital(i.hospitalName)} >
+                    <i className="bi bi-arrow-right btn btn-primary"></i>
+                  </button> 
                 </div>
               </div>
             </div>
           </div>
+           
         </div>
+        )})}
       </div>
 
-      
-
-      <table class="rwd-table">
+    
+      {/* <table class="rwd-table">
         <tbody>
           {(hospitals || []).map((i) => {
             return (
@@ -190,7 +199,7 @@ function Hospitals() {
             );
           })}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }

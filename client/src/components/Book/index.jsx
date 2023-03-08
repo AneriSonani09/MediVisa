@@ -32,14 +32,21 @@ const Book = () => {
   y = JSON.parse(y);
   y = y.userName;
 
+  var bookedHos = localStorage.getItem("hospital");
+    console.log(bookedHos);
+    bookedHos = JSON.parse(bookedHos);
+    
+
   const [data, setData] = useState({
     userName: y,
     name: "",
     email: "",
     dateOfBirth: "",
     city: "",
+    hospitalName: bookedHos,
     mobile: "",
   });
+  
   const [error, setError] = useState("");
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });

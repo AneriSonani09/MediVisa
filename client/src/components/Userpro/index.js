@@ -7,6 +7,7 @@ import './userPro.css'
 
 function Userpro() {
   console.log("Donnnnneee!!!!");
+
   var x = localStorage.getItem("loggedUser");
   console.log(x);
   x = JSON.parse(x);
@@ -86,9 +87,9 @@ function Userpro() {
                         <th>Email</th>
                         <th>Date of Birth</th>
                         <th>City</th>
+                        <th>Hospital Name</th>
                         <th>Contact</th>
                         <th>Status</th>
-                        <th>Accept</th>
                       </tr>
                       {(bookHistory || []).map((i) => {
                         return (
@@ -97,11 +98,9 @@ function Userpro() {
                             <td>{i.email}</td>
                             <td>{i.dateOfBirth}</td>
                             <td>{i.city}</td>
+                            <td>{i.hospitalName}</td>
                             <td>{i.mobile}</td>
                             <td>{i.isConfirm}</td>
-                            <td>
-                              <button>Accept</button>
-                            </td>
                           </tr>
                         );
                       })}

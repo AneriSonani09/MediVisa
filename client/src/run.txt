@@ -1,0 +1,5 @@
+cd server
+nodemon app.js
+
+cd client
+npm start

@@ -8,6 +8,7 @@ const bookingSchema = new mongoose.Schema({
   email: { type: String, required: true },
   city: { type: String, required: true },
   mobile: { type: Number, required: true },
+  hospitalName: { type: String, required: true },
   isConfirm: { type: String, default: "Pending" },
 });
 
@@ -20,9 +21,10 @@ const validate = (data) => {
     email: Joi.string().email().required().label("Email"),
     city: Joi.string().city().required().label("City"),
     contactNumber: Joi.number()
-      .contactNumber()
-      .required()
-      .label("Contact Number"),
+    .contactNumber()
+    .required()
+    .label("Contact Number"),
+    hospital: Joi.string().hospital().required().label("Hospital"),
   });
   return schema.validate(data);
 };
