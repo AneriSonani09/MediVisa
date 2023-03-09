@@ -25,6 +25,22 @@ function Admin() {
     getAllBookings();
   }, []);
 
+
+  function getConfirmation(id){
+    console.log(`Booking accepted with ${id}`);
+    axios
+    .post("http://localhost:8000/api/confirm/",{id})
+    .then((res) => {
+        let data = res.data;
+        console.log(data);
+        console.log("*********");
+        console.log(data.msg);
+
+    })
+  }
+
+  
+
   return (
     <div>
       <NavBar />
@@ -61,7 +77,8 @@ function Admin() {
                           <td>{i.mobile}</td>
                           <td>{i.isConfirm}</td>
                           <td>
-                            <button>Accept</button>
+                            <button onClick={() => getConfirmation(i._id)}>
+                              Accept</button>
                           </td>
                         </tr>
                       );

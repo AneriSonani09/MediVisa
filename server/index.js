@@ -10,6 +10,7 @@ const bookingsRoutes = require("./routes/confirmbook");
 const hospitalRoutes = require("./routes/hospital");
 const allHospitals = require("./routes/hos");
 const bookHisRoutes = require("./routes/bookHistory");
+const bookConfirm = require("./routes/confirm");
 // database connection
 connection();
 
@@ -25,6 +26,7 @@ app.use("/api/confirmbook", bookingsRoutes);
 app.use("/api/hospital", hospitalRoutes);
 app.use("/api/hos", allHospitals);
 app.use("/api/bookHistory", bookHisRoutes);
+app.use("/api/confirm", bookConfirm);
 
 // app.use(require('./api/auth'));
 // app.use(require('./api/users'));
