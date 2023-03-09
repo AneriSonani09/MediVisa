@@ -168,17 +168,17 @@ function Hospitals(props) {
       </div>
 
     
-      {/* <table class="rwd-table">
+      {/* <table className="rwd-table">
         <tbody>
           {(hospitals || []).map((i) => {
             return (
               <div className="container-fluid">
-                <div class="card">
-                  <h5 class="card-header">{i.hospitalName}</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">{i.city}</h5>
-                    <h5 class="card-title">{i.state}</h5>
-                    <p class="card-text">
+                <div className="card">
+                  <h5 className="card-header">{i.hospitalName}</h5>
+                  <div className="card-body">
+                    <h5 className="card-title">{i.city}</h5>
+                    <h5 className="card-title">{i.state}</h5>
+                    <p className="card-text">
                       With supporting text below as a natural lead-in to
                       additional content.lorem Lorem ipsum, dolor sit amet
                       consectetur adipisicing elit. Non natus nesciunt, aut
@@ -188,7 +188,7 @@ function Hospitals(props) {
                     </p>
                     <a
                       href="http://localhost:3000/book"
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                     >
                       Book Appointment
                     </a>

@@ -9,9 +9,6 @@ function Appointment() {
           <div className="row gx-5">
             <div className="col-lg-6 mb-5 mb-lg-0">
               <div className="mb-4">
-              
-
-
                 <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">
                   Appointment
                 </h5>

@@ -44,19 +44,19 @@ function Admin() {
   return (
     <div>
       <NavBar />
-      <section id="about-section" class="pt-5 pb-5">
-        <div class="container wrapabout">
-          <div class="red"></div>
-          <div class="row">
-            <div class="blockabout">
-              <div class="blockabout-inner text-center text-sm-start">
-                <div class="title-big pb-3 mb-3">
+      <section id="about-section" className="pt-5 pb-5">
+        <div className="container wrapabout">
+          <div className="red"></div>
+          <div className="row">
+            <div className="blockabout">
+              <div className="blockabout-inner text-center text-sm-start">
+                <div className="title-big pb-3 mb-3">
                   <center>
                     <h3>Admin pannel</h3>
                   </center>
                 </div>
 
-                <table class="rwd-table">
+                <table className="rwd-table">
                   <tbody>
                     <tr>
                       <th>Patient Name</th>

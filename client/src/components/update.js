@@ -91,27 +91,27 @@ useEffect(()=>{
 
   
   return (
-    <div class="main">
-      <section class="signup">
+    <div className="main">
+      <section className="signup">
         <div>Customer Update</div>
         <div
-          class="container"
+          className="container"
           style={{ marginBottom: "35px", marginTop: "35px", width: "660px" }}
         >
-          <div class="signup-content">
+          <div className="signup-content">
             <form
               method="POST"
               id="signup-form"
-              class="signup-form"
+              className="signup-form"
               onSubmit={handleupdate}
             >
-              <h2 class="form-title">Update account</h2>
-              <div class="form-group">
+              <h2 className="form-title">Update account</h2>
+              <div className="form-group">
                 <input
                   type="text"
                   onChange={handlechange}
                   value={data.username}
-                  class="form-input"
+                  className="form-input"
                   name="username"
                   id="name"
                   placeholder="Your User Name"
@@ -119,12 +119,12 @@ useEffect(()=>{
                 />
                 <div style={{ color: "red" }}>{error.username}</div>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
                   onChange={handlechange}
                   value={data.fname}
-                  class="form-input"
+                  className="form-input"
                   name="fname"
                   id="fname"
                   placeholder="Your First Name"
@@ -132,12 +132,12 @@ useEffect(()=>{
                 />
                 {/* <div style={{color:'red'}}>{error.username}</div> */}
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
                   onChange={handlechange}
                   value={data.lname}
-                  class="form-input"
+                  className="form-input"
                   name="lname"
                   id="lname"
                   placeholder="Your Last Name"
@@ -145,10 +145,10 @@ useEffect(()=>{
                 />
                 {/* <div style={{color:'red'}}>{error.username}</div> */}
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-input"
+                  className="form-input"
                   onChange={handlechange}
                   value={data.PhoneNumber}
                   name="PhoneNumber"
@@ -159,10 +159,10 @@ useEffect(()=>{
                 />
                 <div style={{ color: "red" }}>{error.PhoneNumber}</div>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="email"
-                  class="form-input"
+                  className="form-input"
                   onChange={handlechange}
                   value={data.email}
                   name="email"
@@ -173,10 +173,10 @@ useEffect(()=>{
                 <div style={{ color: "red" }}>{error.email}</div>
               </div>
               
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-input"
+                  className="form-input"
                   onChange={handlechange}
                   value={data.address}
                   name="address"
@@ -187,7 +187,7 @@ useEffect(()=>{
                 {/* <div style={{color:'red'}}>{error.}</div> */}
               </div>
               
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   style={{
                     backgroundImage:
@@ -196,7 +196,7 @@ useEffect(()=>{
                   type="submit"
                   name="submit"
                   id="submit"
-                  class="form-submit"
+                  className="form-submit"
                   value="Sign up"
                 />
                 <div style={{ color: "red" }}>{mainerror}</div>

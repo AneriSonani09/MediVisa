@@ -1,10 +1,13 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 function NavBar() {
     const handleLogout = () => {
         localStorage.removeItem("token");
         window.location.reload();
-      };
+    };
+
+    const user = localStorage.getItem("token");
       
   return (
     <div>
@@ -66,19 +69,8 @@ function NavBar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto py-0">
-                <a href="index.html" className="nav-item nav-link active">
-                  Home
-                </a>
-                <a href="about.html" className="nav-item nav-link">
-                  About
-                </a>
-                <a href="service.html" className="nav-item nav-link">
-                  Service
-                </a>
-                <a href="price.html" className="nav-item nav-link">
-                  Pricing
-                </a>
-                <div className="nav-item dropdown">
+                <NavLink to="/" className="nav-item nav-link">Home</NavLink>
+                {/* <div className="nav-item dropdown">
                   <a
                     href="#"
                     className="nav-link dropdown-toggle"
@@ -106,17 +98,17 @@ function NavBar() {
                       Search
                     </a>
                   </div>
-                </div>
-                <a
-                  href="http://localhost:3000/Userpro"
-                  className="nav-item nav-link"
-                >
-                  Profile
-                </a>
+                </div> */}
+                
+
+               
+                <NavLink to="/hospitals" className="nav-item nav-link">New Appointment</NavLink>
+                {user && <NavLink to="/Userpro" className="nav-item nav-link">Profile</NavLink>}
+                {user && 
                 <button className="nav-item nav-link" onClick={handleLogout}>
-                  Logout{" "}
-                </button>
-                {/* <a href="contact.html" className="nav-item nav-link">Logout</a> */}
+                  Logout
+                </button>}
+                {!user && <NavLink to="/login" className="nav-item nav-link">Login</NavLink>}
               </div>
             </div>
           </nav>
@@ -127,4 +119,4 @@ function NavBar() {
   );
 }
 
-export default NavBar
+export default NavBar;

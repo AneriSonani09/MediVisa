@@ -1,4 +1,3 @@
-import styles from "./styles.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "../NavBar";
@@ -66,21 +65,21 @@ function Userpro() {
       <br></br>
 
       {/* ----------------------- */}
-      <section id="about-section" class="pt-5 pb-5">
-        <div class="container wrapabout">
-          <div class="red"></div>
-          <div class="row">
-            <div class="col-lg-9 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
-              <div class="blockabout">
-                <div class="blockabout-inner text-center text-sm-start">
-                  <div class="title-big pb-3 mb-3">
+      <section id="about-section" className="pt-5 pb-5">
+        <div className="container wrapabout">
+          <div className="red"></div>
+          <div className="row">
+            <div className="col-lg-9 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+              <div className="blockabout">
+                <div className="blockabout-inner text-center text-sm-start">
+                  <div className="title-big pb-3 mb-3">
                     <h3>Booking History</h3>
                   </div>
                   {/* <h1>User Profile</h1>
                   <h2>{x.email}</h2>
                   <h2>{x.userName}</h2> */}
 
-                  <table class="rwd-table">
+                  <table className="rwd-table">
                     <tbody>
                       <tr>
                         <th>Patient Name</th>
@@ -109,8 +108,8 @@ function Userpro() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 mt-5 mt-lg-0">
-              <figure class="potoaboutwrap">
+            <div className="col-lg-3 mt-5 mt-lg-0">
+              <figure className="potoaboutwrap">
                 {/* <img
                   src="https://bootdey.com/image/400x700/FF7F50/000000"
                   alt="potoabout"
