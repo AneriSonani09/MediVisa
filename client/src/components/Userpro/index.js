@@ -6,19 +6,12 @@ import './userPro.css'
 
 function Userpro() {
   console.log("Donnnnneee!!!!");
-  
+
   var x = localStorage.getItem("loggedUser");
-  useEffect(() => {
-    getProfile();
-  }, [x]);
-  
-  let uName;
-  const getProfile = () => {
-    uName = x.userName;
-    console.log(x);
-    x = JSON.parse(x);
-  }
-  
+  console.log(x);
+  x = JSON.parse(x);
+
+  let uName = x.userName;
 
   const [bookHistory, setbookHistory] = useState();
   const getHistory = () => {
@@ -37,30 +30,6 @@ function Userpro() {
         console.log(error);
       });
   };
-  // const getHistory =  async(e) => {
-  //   try {
-  //     var resi = await fetch("http://localhost:8000/api/bookHistory/", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         uName,
-  //       }),
-  //     });
-  //     console.log("////");
-  //     resi=resi.json();
-  //     console.log(resi);
-  //     console.log("////");
-  //     // let data = res.data;
-  //     // console.log(data);
-  //     console.log("Hurrahhhh");
-  //     console.log(resi.userBooked);
-  //     setbookHistory(resi.userBooked);
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  // }
   useEffect(() => {
     getHistory();
   }, []);
