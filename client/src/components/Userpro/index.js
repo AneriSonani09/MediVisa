@@ -6,12 +6,19 @@ import './userPro.css'
 
 function Userpro() {
   console.log("Donnnnneee!!!!");
-
+  
   var x = localStorage.getItem("loggedUser");
-  console.log(x);
-  x = JSON.parse(x);
-
-  let uName = x.userName;
+  useEffect(() => {
+    getProfile();
+  }, [x]);
+  
+  let uName;
+  const getProfile = () => {
+    uName = x.userName;
+    console.log(x);
+    x = JSON.parse(x);
+  }
+  
 
   const [bookHistory, setbookHistory] = useState();
   const getHistory = () => {

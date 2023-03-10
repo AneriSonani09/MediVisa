@@ -9,6 +9,7 @@
 .btn {
     font-weight: 700;
     transition: .5s;
+    border : none;
 }
 
 .btn:hover {

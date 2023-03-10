@@ -140,11 +140,12 @@ function Hospitals(props) {
       <div>
         <NavBar/>
 
-        {(hospitals || []).map((i) => {
-              return (
+       
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row g-5">
+            {(hospitals || []).map((i) => {
+              return (
               <div className="col-lg-4 col-md-6">
                 <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                   <h4 className="mb-3">{i.hospitalName}</h4>
@@ -160,11 +161,13 @@ function Hospitals(props) {
                   </button> 
                 </div>
               </div>
+              )})}
+
             </div>
           </div>
            
         </div>
-        )})}
+
       </div>
 
     

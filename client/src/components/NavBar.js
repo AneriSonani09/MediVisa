@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom'
 function NavBar() {
     const handleLogout = () => {
         localStorage.removeItem("token");
+        localStorage.removeItem("loggedUser");
         window.location.reload();
     };
 
@@ -99,9 +100,7 @@ function NavBar() {
                     </a>
                   </div>
                 </div> */}
-                
-
-               
+                               
                 <NavLink to="/hospitals" className="nav-item nav-link">New Appointment</NavLink>
                 {user && <NavLink to="/Userpro" className="nav-item nav-link">Profile</NavLink>}
                 {user && 
