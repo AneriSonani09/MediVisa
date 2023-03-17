@@ -138,7 +138,6 @@ function Hospitals(props) {
   return (
     <div>
       <div>
-        <NavBar/>
 
        
         <div className="container-fluid py-5">

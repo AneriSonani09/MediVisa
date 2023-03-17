@@ -1,0 +1,8 @@
+.days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    margin: 0;
+    list-style: none;
+  }

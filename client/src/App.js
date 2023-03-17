@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import Hospitals from "./components/Hospitals";
 import Admin from "./components/Admin";
 import Userpro from "./components/Userpro"
+import Slots from "./components/Slots";
+import NavBar from "./components/NavBar";
 
 
 
@@ -14,6 +16,8 @@ function App() {
 	const user = localStorage.getItem("token");
 
 	return (
+		<>
+		<NavBar/>
 		<Routes>
 			{/* {user && <Route path="/" exact element={<Home />} />} */}
 			<Route path="/" exact element={<Home />} />
@@ -23,11 +27,14 @@ function App() {
 			<Route path="/hospitals" exact element={<Hospitals />}/>
 			<Route path="/Userpro" exact element={<Userpro />} />
 			<Route path="/admin" exact element={<Admin />}/>
+			<Route path="/slots" exact element={<Slots />} />
 			{/* <Route path="/" element={<Navigate replace to="/login" />} />
 			 */}
 			 {!user && <Route path="/book" element={<Navigate replace to="/login" />} />}
 			 {!user && <Route path="/appointment" element={<Navigate replace to="/login" />} />}
 		</Routes>
+		</>
+		
 	);
 }
 

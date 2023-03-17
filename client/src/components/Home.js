@@ -11,14 +11,11 @@ import Rules from './Rules';
 function Home() {
   return (
     <div>
-      <NavBar />
       <Hero />
       <About />
       <Rules />
       <Services />
       <Appointment />
-      {/* <Keyur/> */}
-      <Search />
       <Footer />
     </div>
   );

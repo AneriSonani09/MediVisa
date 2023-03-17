@@ -71,36 +71,7 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto py-0">
                 <NavLink to="/" className="nav-item nav-link">Home</NavLink>
-                {/* <div className="nav-item dropdown">
-                  <a
-                    href="#"
-                    className="nav-link dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                  >
-                    Pages
-                  </a>
-                  <div className="dropdown-menu m-0">
-                    <a href="blog.html" className="dropdown-item">
-                      Blog Grid
-                    </a>
-                    <a href="detail.html" className="dropdown-item">
-                      Blog Detail
-                    </a>
-                    <a href="team.html" className="dropdown-item">
-                      The Team
-                    </a>
-                    <a href="testimonial.html" className="dropdown-item">
-                      Testimonial
-                    </a>
-                    <a href="appointment.html" className="dropdown-item">
-                      Appointment
-                    </a>
-                    <a href="search.html" className="dropdown-item">
-                      Search
-                    </a>
-                  </div>
-                </div> */}
-                               
+                <NavLink to="/slots" className="nav-item nav-link">Slots</NavLink>
                 <NavLink to="/hospitals" className="nav-item nav-link">New Appointment</NavLink>
                 {user && <NavLink to="/Userpro" className="nav-item nav-link">Profile</NavLink>}
                 {user && 

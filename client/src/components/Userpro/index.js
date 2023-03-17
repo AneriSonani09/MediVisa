@@ -36,7 +36,7 @@ function Userpro() {
 
   return (
     <>
-      <NavBar />
+      
 
       <br></br>
 
