@@ -1,4 +1,4 @@
-# Ready2Fly
+# MediVisa
 
 MediVisa is a web-based application that allows students to book medical appointments across India for their visa application process. Users can upload all the necessary documents such as Aadhar card, passport, and other documents required for the medical test and visa process.
 
