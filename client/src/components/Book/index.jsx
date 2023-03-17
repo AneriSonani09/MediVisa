@@ -75,7 +75,6 @@ const Book = () => {
   };
   return (
     <>
-      <NavBar />
       <div className={styles.signup_container}>
         <div className={styles.signup_form_container}>
           <div className={styles.right}>

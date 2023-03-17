@@ -9,9 +9,9 @@ function Services() {
         <div className="container">
           <div className="text-center mx-auto mb-5" style={style1}>
             <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">
-              Services
+              Required Tests
             </h5>
-            <h1 className="display-4">Excellent Medical Services</h1>
+            <h1 className="display-4">Thorough Physical Examination</h1>
           </div>
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
@@ -19,12 +19,12 @@ function Services() {
                 <div className="service-icon mb-4">
                   <i className="fa fa-2x fa-user-md text-white"></i>
                 </div>
-                <h4 className="mb-3">General Information</h4>
+                <h4 className="mb-3">Chest X-Rays</h4>
                 <p className="m-0">
-                  The test contents in the medical examination packages of CIC
-                  are only as per the advice of the Canadian consulate. If
-                  required additional tests have to be done as per their
-                  protocol.
+                      This is an important medical examination to determine any
+                      persisting issues with crucial systems. If a female
+                      applicant is pregnant, the X-Ray test is avoided for
+                      better health of the fetus.
                 </p>
                 <a className="btn btn-lg btn-primary rounded-pill" href="">
                   <i className="bi bi-arrow-right"></i>

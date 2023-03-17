@@ -11,7 +11,7 @@ function Hero() {
         <div className="row justify-content-start">
           <div className="col-lg-8 text-center text-lg-start">
             <h5
-              className="d-inline-block text-primary text-uppercase border-bottom border-5"
+              className="d-inline-block text-white text-uppercase border-bottom border-5"
               style={divStyle}
             >
               Welcome To Medinova
