@@ -7,17 +7,49 @@ function Slots() {
     useEffect(() => {
         const today = new Date();
         const days = [];
-        for (let i = 0; i < 7; i++) {
+        for (let i = 1; i < 8; i++) {
           const date = new Date(today.getTime() + i * 24 * 60 * 60 * 1000);
           days.push({ date: date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }), index: i });
         }
         setDays(days);
       }, []);
 
+      const slots = [];
+      var day = "";
+      const selectDay = (idx) => {
+          switch (idx) {
+            case 0:
+                day = "day1";
+                break;
+            case 1:
+                day = "day2";
+                break;
+            case 2:
+                day = "day3";
+                break;
+            case 3:
+                day = "day4";
+                break;
+            case 4:
+                day = "day5";
+                break;
+            case 5:
+                day = "day6";
+                break;
+            case 6:
+                day = "day7";
+                break;
+            default:
+              return 'Error';
+          }
+
+
+      }
+
       const style1 = {"maxWidth":"500px"}
-    const style2 = {"width":"100%","maxWidth":"600px"}
-    const style3 = {"height":"60px"}
-    const style4 = {"marginTop":"0"}
+      const style2 = {"width":"100%","maxWidth":"600px"}
+      const style3 = {"height":"60px"}
+      const style4 = {"marginTop":"0"}
 
   return (
     // <div className={styles.signup_container}>
@@ -43,21 +75,28 @@ function Slots() {
                 <h5 className="text-white fw-normal">You're booking a appointment for XXX Hospital.</h5>
             </div>
             <div className="mx-auto" style={style2}>
-            <input type="text" className="input-group form-control border-primary w-50" placeholder="Number of persons" /> <br/>
+            {/* <input type="text" className="input-group form-control border-primary w-50" placeholder="Number of persons" /> <br/> */}
+                <select className="form-select border-primary w-40" style={style3}>
+                        <option selected>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                </select>
                 <div className="input-group">
                     <select className="form-select border-primary w-40" style={style3}>
-                        <option selected>Date</option>
+                        <option selected>Appointment Date</option>
                         {days.map(day => (
-                            <option key={day.index}>{day.date}</option>
+                            <option  onSelect={()=>selectDay(day.index)} key={day.index}>{day.date}</option>
                         ))}
                     </select>
                     <select className="form-select border-primary w-30" style={style3}>
-                        <option selected>Date</option>
-                        {days.map(day => (
-                            <option key={day.index}>{day.date}</option>
-                        ))}
+                        <option selected>Preferred Time Slot</option>
+                        <option>9:00 - 12:00 AM</option>
+                        <option>12:00 - 3:00 AM</option>
+                        <option>3:00 - 6:00 AM</option>
                     </select>
-                    <button className="btn btn-dark border-0 w-30">Search</button>
+                    <button className="btn btn-dark border-0 w-30">BOOK</button>
                 </div>
             </div>
         </div>

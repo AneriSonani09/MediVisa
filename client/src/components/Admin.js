@@ -35,7 +35,7 @@ function Admin() {
         console.log(data);
         console.log("*********");
         console.log(data.msg);
-
+        window.location.reload();
     })
   }
 
@@ -43,7 +43,6 @@ function Admin() {
 
   return (
     <div>
-      <NavBar />
       <section id="about-section" className="pt-5 pb-5">
         <div className="container wrapabout">
           <div className="red"></div>

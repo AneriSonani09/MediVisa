@@ -5,7 +5,7 @@ function NavBar() {
     const handleLogout = () => {
         localStorage.removeItem("token");
         // localStorage.removeItem("loggedUser");
-        window.location.reload();
+        window.location.href = "http://localhost:3000/";
     };
 
     const user = localStorage.getItem("token");
@@ -19,7 +19,7 @@ function NavBar() {
           <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
             <a href="index.html" className="navbar-brand">
               <h1 className="m-0 text-uppercase text-primary">
-                <i className="fa fa-clinic-medical me-2"></i>Ready 2 Fly
+                <i className="fa fa-clinic-medical me-2"></i>MediVisa
               </h1>
             </a>
             <button

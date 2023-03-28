@@ -22,7 +22,7 @@ const Book = () => {
         console.log(error);
       });
   };
-  const addperson = () => {};
+  
   useEffect(() => {
     getGeoInfo();
   }, []);
