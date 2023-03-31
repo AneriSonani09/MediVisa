@@ -10,6 +10,8 @@ const bookingSchema = new mongoose.Schema({
   mobile: { type: Number, required: true },
   hospitalName: { type: String, required: true },
   isConfirm: { type: String, default: "Pending" },
+  date: {type: String, required: true},
+  timing: {type: String, required: true},
 });
 
 const bookings = mongoose.model("bookings", bookingSchema);

@@ -2,37 +2,18 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
-import NavBar from "../NavBar";
 
 const Book = () => {
   const [regionName, setregionName] = useState();
   const [newperson, setaddPerson] = useState({ person: "", dob: "" });
   const style1 = { height: "55px" };
-  const getGeoInfo = () => {
-    axios
-      .get("https://ipapi.co/json/")
-      .then((response) => {
-        let data = response.data;
-        setregionName(data.region);
-        this.setState({
-          regionName: data.region,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   
-  useEffect(() => {
-    getGeoInfo();
-  }, []);
-
   var y = localStorage.getItem("loggedUser");
   console.log(y);
   y = JSON.parse(y);
   y = y.userName;
 
-  var bookedHos = localStorage.getItem("hospital");
+    var bookedHos = localStorage.getItem("hospital");
     console.log(bookedHos);
     bookedHos = JSON.parse(bookedHos);
     

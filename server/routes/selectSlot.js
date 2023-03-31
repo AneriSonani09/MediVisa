@@ -4,7 +4,7 @@ const {hospitals}  = require("../models/hospitals");
 router.post("/", async (req, res) => {
 	try {
 		console.log(req.body);
-		const allHospitals = await hospitals.find({state : req.body.regionName});
+		const allHospitals = await hospitals.find({hospitalName : req.body.bookedHos});
 		console.log("Beforee")
 		console.log(allHospitals)
 		console.log("After")
