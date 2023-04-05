@@ -12,6 +12,7 @@ const allHospitals = require("./routes/hos");
 const bookHisRoutes = require("./routes/bookHistory");
 const bookConfirm = require("./routes/confirm");
 const selectedHospital = require("./routes/selectSlot")
+const formUploadRoutes = require("./routes/formUp");
 // database connection
 connection();
 
@@ -29,6 +30,7 @@ app.use("/api/hos", allHospitals);
 app.use("/api/bookHistory", bookHisRoutes);
 app.use("/api/confirm", bookConfirm);
 app.use("/api/selectSlot", selectedHospital);
+app.use("/api/formUp", formUploadRoutes);
 
 // app.use(require('./api/auth'));
 // app.use(require('./api/users'));

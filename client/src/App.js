@@ -9,7 +9,7 @@ import Admin from "./components/Admin";
 import Userpro from "./components/Userpro"
 import Slots from "./components/Slots";
 import NavBar from "./components/NavBar";
-
+import DocUpload from "./components/DocUpload/Form";
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
 			<Route path="/Userpro" exact element={<Userpro />} />
 			<Route path="/admin" exact element={<Admin />}/>
 			<Route path="/slots" exact element={<Slots />} />
+			<Route path="/upload" exact element={<DocUpload />}/>
 			{/* <Route path="/" element={<Navigate replace to="/login" />} />
 			 */}
 			 {!user && <Route path="/book" element={<Navigate replace to="/login" />} />}
