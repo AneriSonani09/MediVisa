@@ -13,6 +13,7 @@ const bookHisRoutes = require("./routes/bookHistory");
 const bookConfirm = require("./routes/confirm");
 const selectedHospital = require("./routes/selectSlot")
 const formUploadRoutes = require("./routes/formUp");
+const sendmail = require("./routes/mail");
 // database connection
 connection();
 
@@ -31,6 +32,7 @@ app.use("/api/bookHistory", bookHisRoutes);
 app.use("/api/confirm", bookConfirm);
 app.use("/api/selectSlot", selectedHospital);
 app.use("/api/formUp", formUploadRoutes);
+app.use("/api/sendmail", sendmail);
 
 // app.use(require('./api/auth'));
 // app.use(require('./api/users'));

@@ -119,7 +119,7 @@ export default function Form() {
                     formik.handleChange(e);
                     fileChange(e.target.files[0]);
                   }}
-                />
+                multiple />
               </Grid>
             </Grid>
 

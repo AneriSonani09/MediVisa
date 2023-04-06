@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
         console.log(uploadDoc);
         const obj = {
             uploadDoc: upload,
-        };
+      };
         return res.status(200).json(obj);
     } catch (err) {
         res.status(500).json(err);
