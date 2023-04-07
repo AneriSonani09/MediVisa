@@ -1,56 +1,41 @@
 import React, { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
-import NavBar from "../NavBar";
 
-function Hospitals(props) {
+function Hospitals() {
   const [regionName, setregionName] = useState();
-  const navigate = useNavigate();
-  var obj;
-
-  fetch("https://ipapi.co/json/")
-    .then((res) => res.json())
-    .then((data) => {
-      obj = data;
-      setregionName(obj.region);
-    })
-    .then(() => {
-      console.log(obj);
-    });
-
   const [hospitals, setHospitals] = useState();
+  
+  const getUserLocation = () => {
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        setregionName(data.region);
+        console.log("User location");
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user location:", error);
+      });
+  };
 
   const getAllHospitals = () => {
     axios
-      .post("http://localhost:8000/api/hos",{ regionName })
+      .post("http://localhost:8000/api/hosByRegion",{ regionName })
       .then((response) => {
         let data = response.data;
-        console.log(data);
-        console.log("Dhruvi");
-        console.log(data.allHospitals);
         setHospitals(data.allHospitals);
+        //console.log(data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
   useEffect(() => {
-    //  handleSubmit();
+    getUserLocation();
     getAllHospitals();
   }, [regionName]);
 
-  function bookedhospital(hos){
-    console.log(`Button clicked with ${hos}`);
-    localStorage.setItem("hospital", JSON.stringify(hos));
-    var bookedHos = localStorage.getItem("hospital");
-    console.log(bookedHos);
-    bookedHos = JSON.parse(bookedHos);
-    console.log(bookedHos);
-
-    navigate('/slots');
-
-  }
-  
   return (
     <div>
       <div>
@@ -59,7 +44,7 @@ function Hospitals(props) {
             <div className="row g-5">
             {(hospitals || []).map((i) => {
               return (
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-4 col-md-6" key={i._id}>
                 <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                   <h4 className="mb-3">{i.hospitalName}</h4>
                   <h5>{i.city} | {i.state}</h5>
@@ -69,53 +54,14 @@ function Hospitals(props) {
                     required additional tests have to be done as per their
                     protocol.
                   </p>
-                  <button onClick={() => bookedhospital(i.hospitalName)} >
-                    <i className="bi bi-arrow-right btn btn-primary"></i>
-                  </button> 
+                  <Link to={`/book/${i._id}`} className="btn"><i className="bi bi-arrow-right btn btn-primary"></i></Link>
                 </div>
               </div>
               )})}
-
             </div>
-          </div>
-           
+          </div>  
         </div>
-
       </div>
-
-    
-      {/* <table className="rwd-table">
-        <tbody>
-          {(hospitals || []).map((i) => {
-            return (
-              <div className="container-fluid">
-                <div className="card">
-                  <h5 className="card-header">{i.hospitalName}</h5>
-                  <div className="card-body">
-                    <h5 className="card-title">{i.city}</h5>
-                    <h5 className="card-title">{i.state}</h5>
-                    <p className="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.lorem Lorem ipsum, dolor sit amet
-                      consectetur adipisicing elit. Non natus nesciunt, aut
-                      perferendis assumenda modi fugit iure, voluptates
-                      molestias accusamus illo beatae, quas eveniet nulla labore
-                      quidem dicta excepturi voluptatibus.
-                    </p>
-                    <a
-                      href="http://localhost:3000/book"
-                      className="btn btn-primary"
-                    >
-                      Book Appointment
-                    </a>
-                  </div>
-                </div>
-                <br></br>
-              </div>
-            );
-          })}
-        </tbody>
-      </table> */}
     </div>
   );
 }
