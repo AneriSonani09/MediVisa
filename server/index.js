@@ -10,6 +10,7 @@ const bookingsRoutes = require("./routes/confirmbook");
 const hospitalRoutes = require("./routes/hospital");
 const allHospitals = require("./routes/hosByRegion");
 const hospital = require("./routes/hosById");
+const updatedHospital = require("./routes/decSlot");
 const bookHisRoutes = require("./routes/bookHistory");
 const bookConfirm = require("./routes/confirm");
 const selectedHospital = require("./routes/selectSlot")
@@ -30,11 +31,13 @@ app.use("/api/confirmbook", bookingsRoutes);
 app.use("/api/hospital", hospitalRoutes);
 app.use("/api/hosByRegion", allHospitals);
 app.use("/api/hosById",hospital);
+app.use("/api/decSlot",updatedHospital);
 app.use("/api/bookHistory", bookHisRoutes);
 app.use("/api/confirm", bookConfirm);
 app.use("/api/selectSlot", selectedHospital);
 app.use("/api/formUp", formUploadRoutes);
 app.use("/api/sendmail", sendmail);
+
 
 // app.use(require('./api/auth'));
 // app.use(require('./api/users'));

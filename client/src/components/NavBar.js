@@ -33,7 +33,6 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto py-0">
                 <NavLink to="/" className="nav-item nav-link">Home</NavLink>
-                <NavLink to="/slots" className="nav-item nav-link">Slots</NavLink>
                 <NavLink to="/hospitals" className="nav-item nav-link">New Appointment</NavLink>
                 {user && <NavLink to="/Userpro" className="nav-item nav-link">Profile</NavLink>}
                 {user && 

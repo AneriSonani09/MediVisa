@@ -8,7 +8,7 @@ const bookingSchema = new mongoose.Schema({
   email: { type: String, required: true },
   city: { type: String, required: true },
   mobile: { type: Number, required: true },
-  hospitalName: { type: String, required: true },
+  hospitalId: { type: String, required: true },
   isConfirm: { type: String, default: "Pending" },
   date: {type: String, required: true},
   timing: {type: String, required: true},
