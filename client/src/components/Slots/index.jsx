@@ -35,6 +35,26 @@ function Slots() {
         timing: "",
     });
 
+    const mail = data.email;
+    const uname = data.name;
+    const udate = data.date;
+    const utime = data.timing
+
+    
+    // const [subject, setSubject] = useState("");
+    // const [text, setText] = useState("");
+
+    const handleSendEmail = () => {
+      axios
+        .post("http://localhost:8000/api/sendmail", { mail, uname, udate, utime })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+
     const getHospital = () => {
         axios
             .post("http://localhost:8000/api/hosById", { id })
@@ -125,86 +145,130 @@ function Slots() {
     const style4 = { "marginTop": "0" }
 
     return (
-        <div style={style4}>
-            {hospital && <div className="container-fluid bg-primary my-5 py-5">
-                <div className="container py-5">
-                    <div className="text-center mx-auto mb-5" style={style1}>
-                        <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">{hospital.hospitalName}</h5>
-                        <h1 className="display-4 mb-4">Select Your Timings</h1>
-                        <h5 className="text-white fw-normal">You're booking a appointment for {hospital.hospitalName} Hospital.</h5>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <div className="mx-auto" style={style2}>
-                            <div className="input-group">
-                                <input type="text"
-                                    className="input-group form-control border-primary w-50"
-                                    placeholder="Full Name"
-                                    style={style3}
-                                    onChange={handleChange}
-                                    value={data.name}
-                                    name="name"
-                                    required />
-                                <input type="text"
-                                    className="input-group form-control border-primary w-50"
-                                    placeholder="Email Address"
-                                    style={style3}
-                                    onChange={handleChange}
-                                    value={data.email}
-                                    name="email"
-                                    required />
-                            </div>
-                            <div className="input-group">
-                                <input type="text"
-                                    className="input-group form-control border-primary w-50"
-                                    placeholder="Your City"
-                                    style={style3}
-                                    onChange={handleChange}
-                                    value={data.city}
-                                    name="city"
-                                    required />
-                                <input type="text"
-                                    className="input-group form-control border-primary w-50"
-                                    placeholder="Mobile Number"
-                                    style={style3}
-                                    onChange={handleChange}
-                                    value={data.mobile}
-                                    name="mobile"
-                                    required />
-                            </div>
-                            <div className="input-group">
-                                <label
-                                    className="input-group form-control border-primary w-50"
-                                    for="dob"> Date of Birth </label>
-                                <input type="date"
-                                    className="input-group form-control border-primary w-50"
-                                    style={style2}
-                                    onChange={handleChange}
-                                    value={data.dateOfBirth}
-                                    name="dateOfBirth"
-                                    required />
-                            </div>
-                            <div className="input-group">
-                                <select className="form-select border-primary w-30" style={style3} onChange={handleDateChange}>
-                                    <option disabled selected>Appointment Date</option>
-                                    {days.map(day => (
-                                        <option key={day.index}>{day.date}</option>
-                                    ))}
-                                </select>
-                                <select className="form-select border-primary w-40" style={style3} onChange={handleTimeChange}>
-                                    <option disabled selected>Appointment Time</option>
-                                    {slots.map(s => (
-                                        <option key={s._id} value={s.time} disabled={s.slots === 0}>{s.time} - {s.slots} Slots</option>
-                                    ))}
-                                </select>
-                                <button className="btn btn-dark border-0 w-30" style={style3}>BOOK</button>
-                            </div>
-                        </div>
-                    </form>
+      <div style={style4}>
+        {hospital && (
+          <div className="container-fluid bg-primary my-5 py-5">
+            <div className="container py-5">
+              <div className="text-center mx-auto mb-5" style={style1}>
+                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">
+                  {hospital.hospitalName}
+                </h5>
+                <h1 className="display-4 mb-4">Select Your Timings</h1>
+                <h5 className="text-white fw-normal">
+                  You're booking a appointment for {hospital.hospitalName}{" "}
+                  Hospital.
+                </h5>
+              </div>
+              <form onSubmit={handleSubmit}>
+                <div className="mx-auto" style={style2}>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      className="input-group form-control border-primary w-50"
+                      placeholder="Full Name"
+                      style={style3}
+                      onChange={handleChange}
+                      value={data.name}
+                      name="name"
+                      required
+                    />
+                    <input
+                      type="text"
+                      className="input-group form-control border-primary w-50"
+                      placeholder="Email Address"
+                      style={style3}
+                      onChange={handleChange}
+                      value={data.email}
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      className="input-group form-control border-primary w-50"
+                      placeholder="Your City"
+                      style={style3}
+                      onChange={handleChange}
+                      value={data.city}
+                      name="city"
+                      required
+                    />
+                    <input
+                      type="text"
+                      className="input-group form-control border-primary w-50"
+                      placeholder="Mobile Number"
+                      style={style3}
+                      onChange={handleChange}
+                      value={data.mobile}
+                      name="mobile"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <label
+                      className="input-group form-control border-primary w-50"
+                      for="dob"
+                    >
+                      {" "}
+                      Date of Birth{" "}
+                    </label>
+                    <input
+                      type="date"
+                      className="input-group form-control border-primary w-50"
+                      style={style2}
+                      onChange={handleChange}
+                      value={data.dateOfBirth}
+                      name="dateOfBirth"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <select
+                      className="form-select border-primary w-30"
+                      style={style3}
+                      onChange={handleDateChange}
+                    >
+                      <option disabled selected>
+                        Appointment Date
+                      </option>
+                      {days.map((day) => (
+                        <option key={day.index}>{day.date}</option>
+                      ))}
+                    </select>
+                    <select
+                      className="form-select border-primary w-40"
+                      style={style3}
+                      onChange={handleTimeChange}
+                    >
+                      <option disabled selected>
+                        Appointment Time
+                      </option>
+                      {slots.map((s) => (
+                        <option
+                          key={s._id}
+                          value={s.time}
+                          disabled={s.slots === 0}
+                        >
+                          {s.time} - {s.slots} Slots
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      className="btn btn-dark border-0 w-30"
+                      style={style3}
+                      onClick={handleSendEmail}
+                    >
+                      BOOK
+                    </button>
+                  </div>
                 </div>
-            </div>}
-        </div>
-
-    )
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
+    );
 }
 
 export default Slots
