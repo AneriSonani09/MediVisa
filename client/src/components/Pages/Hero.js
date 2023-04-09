@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 function Hero() {
 
@@ -12,26 +13,15 @@ function Hero() {
           <div className="col-lg-8 text-center text-lg-start">
             <h5
               className="d-inline-block text-white text-uppercase border-bottom border-5"
-              style={divStyle}
-            >
-              Welcome To Medinova
+              style={divStyle}>
+              Welcome To MediVisa
             </h5>
             <h1 className="display-1 text-white mb-md-4">
-              Best Healthcare Solution In Your City
+            Your One-Stop Solution for Visa Medical Tests
             </h1>
             <div className="pt-2">
-              <a
-                href=""
-                className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"
-              >
-                Find Doctor
-              </a>
-              <a
-                href="http://localhost:3000/hospitals"
-                className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2"
-              >
-                Appointment
-              </a>
+              <NavLink to="/" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Rules</NavLink>
+              <NavLink to="/hospitals" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</NavLink>
             </div>
           </div>
         </div>

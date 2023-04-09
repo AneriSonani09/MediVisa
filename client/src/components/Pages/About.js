@@ -12,7 +12,7 @@ function About() {
             <div className="row gx-5">
                 <div className="col-lg-5 mb-5 mb-lg-0" style={style1}>
                     <div className="position-relative h-100">
-                        <img className="position-absolute w-100 h-100 rounded" src="img/about.jpg" style={style2} />
+                        <img className="position-left w-100 h-100 rounded" src="img/about.jpg" alt="medical test" style={style2} />
                     </div>
                 </div>
                 <div className="col-lg-7">
