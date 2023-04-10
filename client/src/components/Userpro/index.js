@@ -69,6 +69,7 @@ function Userpro() {
                         <th>Appointment date</th>
                         <th>Appointment time</th>
                         <th>Status</th>
+                        <th>Upload Documents</th>
                       </tr>
                       {(bookHistory || []).map((i) => {
                         return (
@@ -81,6 +82,7 @@ function Userpro() {
                             <td>{i.date}</td>
                             <td>{i.timing}</td>
                             <td>{i.isConfirm}</td>
+                            <td><button>Upload</button></td>
                           </tr>
                         );
                       })}

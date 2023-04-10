@@ -1,0 +1,18 @@
+.upload-container{
+    align-items: center;
+    position: relative;
+    margin: 1rem auto !important;
+    padding: 0;
+    background-color:  #dfedfc;
+    max-width: 48rem;
+    max-height: 60rem;
+    height: 60rem;
+    border: 2px dashed #1e80e8 !important;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.upload-container:hover{
+    background-color:  #d1e6fd;
+}
+    
