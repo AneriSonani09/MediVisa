@@ -24,7 +24,7 @@ function Rules() {
                 </p>
 
                 <p className="text-white mb-6">
-                  3) recent passport size photos and the letter from the embassy
+                  2) recent passport size photos and the letter from the embassy
                   (If any)
                 </p>
               </div>

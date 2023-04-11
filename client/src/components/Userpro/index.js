@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink, useNavigate } from "react-router-dom";
 import './userPro.css'
 
 function Userpro() {
   // console.log("Donnnnneee!!!!");
 
+  const nav = useNavigate();
+
   var x = localStorage.getItem("loggedUser");
-  //console.log(x);
   x = JSON.parse(x);
   let uName = x.userName;
 
+  const y = localStorage.getItem("fName");
+  
+    
+
   const [bookHistory, setbookHistory] = useState();
   const [hosName, setHosName] = useState();
+
+  function handleClick(name){
+    console.log("][][]][]")
+    console.log(name);
+    localStorage.setItem("slotUser",name);
+    //  nav("/upload")
+   }
 
   const getHospitalName = (hospitalId) => {
     axios
@@ -23,8 +36,18 @@ function Userpro() {
       .catch((error) => {
         console.log(error);
       });
+    };
+    
+    const getUploadStatus = () => { 
+      axios.post("http://localhost:8000/api/isUploaded/", {y})
+      .then((response) => {
+          let data = response.data;
+          console.log ("*/887");
+          console.log("Here we have fetched the data")
+          console.log(data);
+      })
+      .catch((error) => { console.log (error);});
   };
-
   const getHistory = () => {
     axios
       .post("http://localhost:8000/api/bookHistory/", { uName })
@@ -82,11 +105,13 @@ function Userpro() {
                             <td>{i.date}</td>
                             <td>{i.timing}</td>
                             <td>{i.isConfirm}</td>
-                            <td><button>Upload</button></td>
+                            <td><NavLink to="/upload" onClick={()=>handleClick(i.name)} className="btn btn-dark border-0 w-30">Upload</NavLink></td>
+                            {/* {getUploadStatus() ? <NavLink to="/upload" onClick={()=>handleClick(i.name)} className="btn btn-dark border-0 w-30">Upload</NavLink>  : <button>No</button>  } */}
                           </tr>
                         );
                       })}
                     </tbody>
+              <button onClick={getUploadStatus}>Hii check me</button>
                   </table>
                 </div>
               </div>

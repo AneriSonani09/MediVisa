@@ -40,7 +40,7 @@ function Slots() {
     const udate = data.date;
     const utime = data.timing
 
-    
+        
     // const [subject, setSubject] = useState("");
     // const [text, setText] = useState("");
 
@@ -155,8 +155,7 @@ function Slots() {
                 </h5>
                 <h1 className="display-4 mb-4">Select Your Timings</h1>
                 <h5 className="text-white fw-normal">
-                  You're booking a appointment for {hospital.hospitalName}{" "}
-                  Hospital.
+                  You're booking a appointment for {hospital.hospitalName}{" "} 
                 </h5>
               </div>
               <form onSubmit={handleSubmit}>

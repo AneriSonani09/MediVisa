@@ -1,12 +1,13 @@
 const router = require("express").Router();
-const imagemodel = require('../models/uploads')
+const uploadmodel = require('../models/uploads')
 
 router.post("/", async (req, res) => {
+    console.log("/*/*/")
     console.log(req.body)
     console.log(req.body.User)
     console.log(req.body.Attach)
     try {
-        const upload = new imagemodel.Uploads(req.body);
+        const upload = new uploadmodel.uploads(req.body);
         await upload.save();
         const uploadDoc = req.body;
         console.log(uploadDoc);

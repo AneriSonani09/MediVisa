@@ -9,7 +9,7 @@ const uploadSchema = new mongoose.Schema({
   },
 });
 
-const Uploads = mongoose.model("Uploads", uploadSchema);
+module.exports= mongoose.model("uploads", uploadSchema);
 
-module.exports = {Uploads};
+// module.exports = {uploads};
 

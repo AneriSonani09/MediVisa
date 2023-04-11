@@ -14,8 +14,10 @@ const updatedHospital = require("./routes/decSlot");
 const bookHisRoutes = require("./routes/bookHistory");
 const bookConfirm = require("./routes/confirm");
 const selectedHospital = require("./routes/selectSlot")
-const formUploadRoutes = require("./routes/formUp");
+const formUploadRoutes = require("./routes/uploadDoc");
 const sendmail = require("./routes/mail");
+const isUpload  = require("./routes/isUpload");
+const slotUsername  = require("./routes/slotUsername");
 // database connection
 connection();
 
@@ -35,8 +37,11 @@ app.use("/api/decSlot",updatedHospital);
 app.use("/api/bookHistory", bookHisRoutes);
 app.use("/api/confirm", bookConfirm);
 app.use("/api/selectSlot", selectedHospital);
-app.use("/api/formUp", formUploadRoutes);
+app.use("/api/uploadDoc", formUploadRoutes);
 app.use("/api/sendmail", sendmail);
+app.use("/api/isUploaded", isUpload);
+app.use("/api/slotUsername", slotUsername);
+
 
 
 // app.use(require('./api/auth'));
