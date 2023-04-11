@@ -7,14 +7,14 @@ router.post("/", async (req, res) => {
   console.log(req.body.User);
   console.log(req.body.Attach);
   const upload = new uploadmodel(req.body);
-  upload.save((err, res) => {
+  upload.save((err, result) => {
     if (err) {
-      console.log(err);
-      res.status(500).send("Failed to insert booking");
-    } else {
-      //console.log(result);
-      res.status(200).send(result);
-    }
+        console.log(err);
+        res.status(500).send('Failed to insert booking');
+      } else {
+        //console.log(result);
+        res.status(200).send(result);
+      }
   });
   //     try {
   //         const upload = new uploadmodel.uploads(req.body);
