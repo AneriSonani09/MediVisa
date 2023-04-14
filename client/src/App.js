@@ -1,14 +1,15 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import Home from "./components/Pages/Home";
 import Hospitals from "./components/Hospitals";
 import Admin from "./components/Admin";
 import Userpro from "./components/Userpro";
 import Slots from "./components/Slots";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Pages/NavBar";
 import SendMail from "./components/SendMail/SendMail";
 import Upload from "./components/Upload";
+import Rules from "./components/Rules/Rules";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -23,9 +24,8 @@ function App() {
         <Route path="/hospitals" exact element={<Hospitals />} />
         <Route path="/Userpro" exact element={<Userpro />} />
         <Route path="/admin" exact element={<Admin />} />
-        {/* <Route path="/slots" exact element={<Slots />} /> */}
         <Route path="/book/:id" element={<Slots />} />
-
+        <Route path="/rules" exact element={<Rules />} />
         <Route path="/upload" exact element={<Upload />} />
 
         <Route path="/sendmail" exact element={<SendMail />} />

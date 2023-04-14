@@ -17,7 +17,7 @@ function Footer() {
                     <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
                     <div className="d-flex flex-column justify-content-start">
                     <NavLink to="/" className="text-light mb-2"><i className="fa fa-angle-right me-2"></i>Home</NavLink>
-                    <NavLink to="/" className="text-light mb-2"><i className="fa fa-angle-right me-2"></i>Rules</NavLink>
+                    <NavLink to="/rules" className="text-light mb-2"><i className="fa fa-angle-right me-2"></i>Rules</NavLink>
                     <NavLink to="/hospitals" className="text-light mb-2"><i className="fa fa-angle-right me-2"></i>New Appointment</NavLink>
                     </div>
                 </div>

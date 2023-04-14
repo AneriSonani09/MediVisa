@@ -19,7 +19,7 @@ function NavBar() {
           <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
             <a href="index.html" className="navbar-brand">
               <h1 className="m-0 text-uppercase text-primary">
-                <i className="fa fa-clinic-medical me-2"></i>MediVisa
+                <NavLink to="/"><i className="fa fa-clinic-medical me-2"></i>MediVisa</NavLink>
               </h1>
             </a>
             <button

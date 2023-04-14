@@ -20,7 +20,7 @@ function Hero() {
             Your One-Stop Solution for Visa Medical Tests
             </h1>
             <div className="pt-2">
-              <NavLink to="/" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Rules</NavLink>
+              <NavLink to="/rules" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Rules</NavLink>
               <NavLink to="/hospitals" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</NavLink>
             </div>
           </div>
