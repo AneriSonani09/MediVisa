@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "20ceuog138@ddu.ac.in", // Replace with your email address
-    pass: "#aneri0667#", // Replace with your email password
+    user: "mailid", // Replace with your email address
+    pass: "password", // Replace with your email password
   },
 });
 
@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
 
   // Create a mail options object
   const mailOptions = {
-    from: "20ceuog138@ddu.ac.in", // Replace with your email address
+    from: "mailid", // Replace with your email address
     to: mail,
     subject: "Medivisa Recieved Your appointment Request !",
     // text: `Dear ${uname}! The appointment is scheduled for ${udate} at ${utime}.` +
