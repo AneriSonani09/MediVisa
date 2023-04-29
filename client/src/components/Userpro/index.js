@@ -111,7 +111,6 @@ async function handleClick(name) {
                         <th>Date of Birth</th>
                         <th>Email</th>
                         <th>Contact</th>
-                        <th>Hospital Name</th>
                         <th>Appointment date</th>
                         <th>Appointment time</th>
                         <th>Status</th>
@@ -126,7 +125,6 @@ async function handleClick(name) {
                             </td>
                             <td>{i.email}</td>
                             <td>{i.mobile}</td>
-                            <td>{i.hospitalId}</td>
                             <td>{i.date}</td>
                             <td>{i.timing}</td>
                             <td>{i.isConfirm}</td>

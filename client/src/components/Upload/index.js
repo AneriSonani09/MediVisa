@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import { Image } from "cloudinary-react";
 import axios from "axios";
 import "./upload.css";
+ 
+
 
 const Upload = () => {
   const [pdfFiles, setPdfFiles] = useState([]);
@@ -28,6 +30,7 @@ const Upload = () => {
   };
 
   const handlePdfFileUpload = () => {
+ 
     var fName = uName + "." + slotUser;
     console.log(fName);
     localStorage.setItem("fName", fName);
@@ -72,32 +75,43 @@ const Upload = () => {
         })
         .catch((error) => console.error(error));
     });
+
+
   };
 
   return (
     <>
       <div className="upload-container">
-        <input
-          type="file"
-          multiple
-          accept="application/pdf"
-          className="btn btn-dark border-0 w-30"
-          onChange={handlePdfFileChange}
-        />
-        <br></br>
-        {/* <button onClick={handlePdfFileUpload}>Upload PDFs</button> */}
-        {pdfFiles.map(({ file, fileId }) => (
-          <div key={fileId}>
-            <Image publicId={fileId} cloudName="dukjva1sb" />
-            <p>{file.name}</p>
+        <div class="card">
+          <div class="header"></div>
+          <div class="container">
+            <img src="img/upload.png" alt="Upload Profile"/>
+            <input
+              type="file"
+              multiple
+              accept="application/pdf"
+              className="btn btn-dark border-0 w-30"
+              onChange={handlePdfFileChange}
+            />
+            <p></p>
+            {/* <button onClick={handlePdfFileUpload}>Upload PDFs</button> */}
+            {pdfFiles.map(({ file, fileId }) => (
+              <div key={fileId}>
+                {/* <Image publicId={fileId} cloudName="dukjva1sb" /> */}
+                <p>{file.name}</p>
+              </div>
+            ))}
+            <button
+              className="btn btn-dark border-0 w-30"
+              onClick={handlePdfFileUpload}
+            >
+              Upload PDFs
+            </button>
           </div>
-        ))}
-        <button
-          className="btn btn-dark border-0 w-30"
-          onClick={handlePdfFileUpload}
-        >
-          Upload PDFs
-        </button>
+        </div>
+
+        <br></br>
+
         {/* <button className="btn btn-dark border-0 w-30" onClick={getSlotUser} >click me</button> */}
       </div>
     </>

@@ -26,9 +26,6 @@ function Services() {
                       applicant is pregnant, the X-Ray test is avoided for
                       better health of the fetus.
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -40,9 +37,6 @@ function Services() {
                 <p className="m-0">
                 It is done to check for any signs of kidney or bladder problems, as well as to screen for communicable diseases like sexually transmitted infections. 
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -54,9 +48,6 @@ function Services() {
                 <p className="m-0">
                 Blood test is done to check for any signs of infectious diseases, such as HIV, Hepatitis B or C, Syphilis, or Tuberculosis. The blood test also checks the applicant's blood type and hemoglobin levels.
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -68,9 +59,6 @@ function Services() {
                 <p className="m-0">
                 It involves a thorough check-up of the applicant's general health, including their heart, lungs, eyes, ears, nose, throat, and skin. 
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -82,9 +70,6 @@ function Services() {
                 <p className="m-0">
                 The applicant must provide proof of vaccination for certain diseases, including measles, mumps, rubella, polio, tetanus, diphtheria, pertussis, and varicella.
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -96,9 +81,6 @@ function Services() {
                 <p className="m-0">
                 Applicants will be asked to provide details about any pre-existing medical conditions, including mental health issues and chronic diseases.
                 </p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <i className="bi bi-arrow-right"></i>
-                </a>
               </div>
             </div>
           </div>

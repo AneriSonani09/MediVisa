@@ -36,7 +36,7 @@ function NavBar() {
                 <NavLink to="/hospitals" className="nav-item nav-link">New Appointment</NavLink>
                 {user && <NavLink to="/Userpro" className="nav-item nav-link">Profile</NavLink>}
                 {user && 
-                <button className="nav-item nav-link" onClick={handleLogout}>
+                <button className="nav-item nav-link" style={{border:'white', backgroundColor:'white'}} onClick={handleLogout}>
                   Logout
                 </button>}
                 {!user && <NavLink to="/login" className="nav-item nav-link">Login</NavLink>}
