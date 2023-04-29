@@ -20,7 +20,7 @@ router.post("/", async(req, res) => {
           }
           res.status(200).json({ msg : "donee"});
         
-    }catch(eroor){
+    }catch(error){
         console.log(error);
         return res.status(500).json({error});
     }

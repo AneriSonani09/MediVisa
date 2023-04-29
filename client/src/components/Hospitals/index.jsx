@@ -42,6 +42,7 @@ function Hospitals() {
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row g-5">
+              <h4 className="mb-3">According to your location, best possible options are displayed here</h4>
             {(hospitals || []).map((i) => {
               return (
               <div className="col-lg-4 col-md-6" key={i._id}>
