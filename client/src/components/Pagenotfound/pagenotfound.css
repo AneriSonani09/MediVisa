@@ -1,0 +1,20 @@
+.page-content {
+    margin-top: 10px;
+    margin-right: 100px;
+    /* margin-left: 100px; */
+    width: 1300px;
+    height: 400px;
+    /* background-color: red; */
+}
+.tr-found.section {
+    padding: 50px
+}
+.found-image img{
+    size: 50px;
+    margin-left: 90px;
+    padding-top: -50px;
+    /* margin-bottom: 100px; */
+}
+.found-info{
+    padding-top: 150px;
+}

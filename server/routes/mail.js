@@ -5,14 +5,12 @@ const nodemailer = require("nodemailer");
 
 // Create a Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: "mailid", // Replace with your email address
-    pass: "password", // Replace with your email password
-  },
-});
+	service: "hotmail",
+    auth: {
+      user: "reactmp@outlook.com",
+      pass: "react#mp52",
+    },
+  });
 
 // Define a route for sending emails
 router.post("/", (req, res) => {
@@ -20,7 +18,7 @@ router.post("/", (req, res) => {
 
   // Create a mail options object
   const mailOptions = {
-    from: "mailid", // Replace with your email address
+    from: "reactmp@outlook.com", // Replace with your email address
     to: mail,
     subject: "Medivisa Recieved Your appointment Request !",
     // text: `Dear ${uname}! The appointment is scheduled for ${udate} at ${utime}.` +

@@ -10,6 +10,7 @@ import NavBar from "./components/Pages/NavBar";
 import SendMail from "./components/SendMail/SendMail";
 import Upload from "./components/Upload";
 import Rules from "./components/Rules/Rules";
+import PageNotFound from "./components/Pagenotfound";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -19,6 +20,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route path="*" element={<PageNotFound/>} />
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/hospitals" exact element={<Hospitals />} />
@@ -27,6 +29,7 @@ function App() {
         <Route path="/book/:id" element={<Slots />} />
         <Route path="/rules" exact element={<Rules />} />
         <Route path="/upload" exact element={<Upload />} />
+        {/* {!user && (<Route path="/upload" element={<Navigate replace to="/login" />} />)} */}
 
         <Route path="/sendmail" exact element={<SendMail />} />
         {/* <Route path="/" element={<Navigate replace to="/login" />} />
