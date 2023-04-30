@@ -53,7 +53,16 @@ function Slots() {
         .catch((error) => {
           console.error(error);
         });
-    };
+  };
+  
+  const disableFutureDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const yyyy = today.getFullYear();
+    const maxDate = yyyy + "-" + mm + "-" + dd;
+    return maxDate;
+  };
 
     const getHospital = () => {
         axios
@@ -111,7 +120,9 @@ function Slots() {
         const sTime = e.target.value;
         setselectedTime(sTime)
         setData({ ...data, timing: sTime });
-    }
+  }
+  
+   
 
     const decSlot = () => {
         axios.patch(`http://localhost:8000/api/decSlot/${id}/slots/${selectedDate}/${selectedTime}`)
@@ -155,7 +166,7 @@ function Slots() {
                 </h5>
                 <h1 className="display-4 mb-4">Select Your Timings</h1>
                 <h5 className="text-white fw-normal">
-                  You're booking a appointment for {hospital.hospitalName}{" "} 
+                  You're booking a appointment for {hospital.hospitalName}{" "}
                 </h5>
               </div>
               <form onSubmit={handleSubmit}>
@@ -219,6 +230,7 @@ function Slots() {
                       onChange={handleChange}
                       value={data.dateOfBirth}
                       name="dateOfBirth"
+                      max={disableFutureDate()}
                       required
                     />
                   </div>

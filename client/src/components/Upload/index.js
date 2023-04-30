@@ -5,8 +5,7 @@ import axios from "axios";
 import "./upload.css";
 import { useNavigate } from "react-router-dom";
 import upload from "./upload.png";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Upload = () => {
   const [pdfFiles, setPdfFiles] = useState([]);
@@ -71,7 +70,6 @@ const Upload = () => {
               console.log(response.data);
             }
           } catch (err) {
-            toast.error(err.message);
             console.log(err.message);
           }
         })
