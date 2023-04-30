@@ -11,6 +11,7 @@ import SendMail from "./components/SendMail/SendMail";
 import Upload from "./components/Upload";
 import Rules from "./components/Rules/Rules";
 import PageNotFound from "./components/Pagenotfound";
+import Uploaded from "./components/Pages/uploaded";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -29,6 +30,7 @@ function App() {
         <Route path="/book/:id" element={<Slots />} />
         <Route path="/rules" exact element={<Rules />} />
         <Route path="/upload" exact element={<Upload />} />
+        <Route path="/uploaded" exact element={< Uploaded />} />
         {/* {!user && (<Route path="/upload" element={<Navigate replace to="/login" />} />)} */}
 
         <Route path="/sendmail" exact element={<SendMail />} />

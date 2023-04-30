@@ -24,7 +24,7 @@ async function handleClick(name) {
     const objects = await getUploadStatus();
 
     if (objects && objects.isUpload.length === 0) window.location.href = "/upload";
-    else window.location.href = "/";
+    else window.location.href = "/uploaded";
 
     console.log(objects);
     console.log("Hiii2");
